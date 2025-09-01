@@ -1,0 +1,18 @@
+.menu {
+  /* display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  top: 0; */
+  
+  background-color: blueviolet;
+  position: fixed;   /* fijo en pantalla */
+  top: 0;            /* pegado arriba */
+  right: 0;          /* pegado a la derecha */
+  width: 300px;      /* ancho del bloque */
+  height: 100%;      /* ocupa todo el alto */
+  box-shadow: -2px 0 8px rgba(0,0,0,0.3); /* sombra hacia la izquierda */
+  z-index: 9999;     /* por encima de todo */
+}
