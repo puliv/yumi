@@ -19,21 +19,22 @@
 .button-hover {
     transition: transform 0.1s, box-shadow 0.1s, background-color 0.3s, border 0.3s;
     cursor: pointer;
-    border: 2px solid #1D4ED8;
+    border: 2px solid #ff3131;
     border-radius: 6px;
     padding: 8px 16px;
     background-color: white;
-    color: #1D4ED8;
+    color: #ff3131;
     margin-top: auto;
 }
 
 .button-hover:hover {
-    background-color: #1D4ED8;
+    background-color: #ff3131;
     color: white;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-color: #ff3131;
 }
 
 .button-hover:active {
     transform: translateY(3px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

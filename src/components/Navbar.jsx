@@ -24,7 +24,7 @@ function Navbar() {
           </li>
         </ul>
         <div className="navbar-brand">
-          <a class="navbar-brand" href="#">
+          <a className="navbar-brand" href="#">
             <img src={yumi} alt="" width="100" height="auto" />
           </a>
         </div>
