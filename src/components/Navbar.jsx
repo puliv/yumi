@@ -1,16 +1,11 @@
-import { useState } from "react";
 import "../style/Navbar.css";
+import yumi from "../assets/yumi_blanco.png";
 import Menu from "./Menu";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <nav className="navbar fixed-top ">
       <div className="container-fluid">
-        <div className="navbar-brand">
-          <span>YUMI AUTOSERVICIO</span>
-        </div>
         <ul className="nav">
           <li className="nav-item">
             <a className="nav-link" href="#">
@@ -28,6 +23,11 @@ function Navbar() {
             </a>
           </li>
         </ul>
+        <div className="navbar-brand">
+          <a class="navbar-brand" href="#">
+            <img src={yumi} alt="" width="100" height="auto" />
+          </a>
+        </div>
         <div className="menu-btn">
           <button
             className="btn btn-primary"
@@ -38,8 +38,8 @@ function Navbar() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
+              width="25"
+              height="25"
               fill="currentColor"
               className="bi bi-list"
               viewBox="0 0 16 16"
@@ -53,7 +53,6 @@ function Navbar() {
         </div>
       </div>
 
-      {/* {isOpen && <Menu />} */}
       <Menu />
     </nav>
   );

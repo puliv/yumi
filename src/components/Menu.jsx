@@ -1,5 +1,5 @@
-import { useState } from "react";
 import "../style/Menu.css";
+import yumi from "../assets/yumi-color.png";
 
 export default function Menu() {
   return (
@@ -10,18 +10,36 @@ export default function Menu() {
       aria-labelledby="offcanvasExampleLabel"
     >
       <div className="offcanvas-header">
-        <h5 className="offcanvas-title" id="offcanvasExampleLabel">
-          YUMI MENÚ
-        </h5>
+        <img src={yumi} alt="" width="180" height="auto" />
         <button
           type="button"
-          className="btn-close"
+          className="btn-close           
+          position-absolute
+          top-0
+          end-0
+          m-2"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
         ></button>
       </div>
       <div className="offcanvas-body">
-        <div></div>
+        <ul className="off-canvas-body-list">
+          <li className="off-canvas-body-list-item">
+            <a className="off-canvas-body-list-link" href="#">
+              Inicio
+            </a>
+          </li>
+          <li className="off-canvas-body-list-item">
+            <a className="off-canvas-body-list-link" href="#">
+              Catálogo
+            </a>
+          </li>
+          <li className="off-canvas-body-list-item">
+            <a className="off-canvas-body-list-link" href="#">
+              Contacto
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );
