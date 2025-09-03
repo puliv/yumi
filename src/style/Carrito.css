@@ -1,0 +1,71 @@
+
+.carrito-flotante {
+    position: fixed;
+    padding: 15px;
+    bottom: 20px;
+    right: 20px;
+    width: 450px;
+    max-height: 400px;
+    z-index: 1050;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    overflow-y: auto;
+    animation: fadeInUp 0.3s ease;
+}
+
+.modal-content {
+    border: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header, .modal-footer {
+    padding: 0.5rem 1rem;
+}
+
+.modal-body {
+    padding: 0.5rem 1rem;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrito-lista {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.carrito-lista::-webkit-scrollbar {
+    width: 6px;
+}
+
+.carrito-lista::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.carrito-lista::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Crea un intercalado de colores en el carrito */
+.carrito-lista .list-group-item:nth-child(odd) {
+    background-color: #ffffff;
+}
+.carrito-lista .list-group-item:nth-child(even) {
+    background-color: #e8eaeb;
+}
