@@ -1,16 +1,26 @@
 .navbar {
-  background-color: #987388;
-}
-
-.navbar-brand {
-  font-size: 1.4rem;
-  letter-spacing: 1px;
+  background-color: #ff3131;
+  /* color principal */
 }
 
 .nav-link {
-  transition: color 0.3s ease;
+  color: #fff !important;
 }
 
-.nav-link:hover {
-  color: #0d6efd; /* Azul Bootstrap */
+.menu-btn .btn {
+  background-color: #ff3131;
+  color: #fff;
+  border: #fff solid 1.5px;
+  padding: 4px 10px 5px 10px;
 }
+
+.menu-btn .btn:hover,
+.menu-btn .btn:active,
+.menu-btn .btn:focus-visible {
+  background-color: #fff !important;
+  color: #ff3131;
+  border-color: #ff3131 !important;
+  box-shadow: none;
+  outline: none;
+}
+
