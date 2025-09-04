@@ -1,3 +1,7 @@
+.offcanvas, .offcanvas-start {
+  width: 300px !important;
+}
+
 .offcanvas-header {
   padding-left: 30px;
 }
@@ -10,6 +14,11 @@
 
   li {
     padding: 8px 0;
+    color: #ff3131;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

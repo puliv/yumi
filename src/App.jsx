@@ -82,6 +82,9 @@ function App() {
         vaciarCarrito={vaciarCarrito}
       />
 
+      {/* Puli: convertir a componente y configurar estilo para que se muestre por encima del footer */}
+      {/* Puli: todo el contenido de productos y carrito debería ir dentro del componente HOME */}
+
       {/* Botón flotante que aparece solo cuando el carrito está cerrado */}
       {!mostrarCarrito && (
         <button
@@ -101,14 +104,11 @@ function App() {
       )}
       <Router>
         <div className="App">
-          {" "}
           {/* Contenedor principal de la aplicación */}
-          <Navbar /> {/* Navbar siempre visible */}
+          <Navbar /> Navbar siempre visible
           <div className="layout">
-            {" "}
             {/* Contenedor para el contenido de la página */}
             <Routes>
-              {" "}
               {/* Rutas para contenido dinámico */}
               <Route path="/" element={<Home />} />
               <Route path="/contacto" element={<Contacto />} />

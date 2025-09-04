@@ -5,6 +5,11 @@
 
 .nav-link {
   color: #fff !important;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
 }
 
 .menu-btn .btn {
