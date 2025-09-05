@@ -47,6 +47,7 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   background-color: #ff3131 !important;
   border-color: #ff3131 !important;
+  z-index: 1000;
 }
 
 .boton-flotante:hover {

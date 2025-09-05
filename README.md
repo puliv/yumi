@@ -14,7 +14,6 @@
 5. [Estructura del proyecto](#estructura-del-proyecto)
 6. [Configuración adicional](#configuración-adicional)
 7. [Contribuciones](#contribuciones)
-8. [Licencia](#licencia)
 
 ---
 
