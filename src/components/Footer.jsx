@@ -2,10 +2,48 @@ import "../style/Footer.css";
 
 function Footer() {
   return (
-    <footer id="footer" className="footer bg-dark text-white py-3 mt-auto">
-      <div className="container-fluid text-center">
-        <p className="mb-1">&copy; 2025 YUMI AUTOSERVICE. Todos los derechos reservados.</p>
-        <small>Hecho con ❤️</small>
+    <footer id="footer" className="footer bg-dark text-white py-4 mt-auto">
+      <div className="container">
+        <div className="row">
+          {/* Columna 1 - Información de la empresa */}
+          <div className="col-md-4 mb-3">
+            <h5>YUMI AUTOSERVICE</h5>
+            <p>
+              Software para autoservicio en tu tienda.
+            </p>
+          </div>
+
+          {/* Columna 2 - Enlaces rápidos */}
+          <div className="col-md-4 mb-3">
+            <h5>Enlaces</h5>
+            <ul className="list-unstyled">
+              <li><a href="/" className="text-white text-decoration-none">Inicio</a></li>
+              <li><a href="/catalogo" className="text-white text-decoration-none">Catálogo</a></li>
+              <li><a href="/carrito" className="text-white text-decoration-none">Carrito</a></li>
+              <li><a href="/contacto" className="text-white text-decoration-none">Contacto</a></li>
+            </ul>
+          </div>
+
+          {/* Columna 3 - Contacto */}
+          <div className="col-md-4 mb-3">
+            <h5>Contacto</h5>
+            <p>Email: contacto@yumiautoservicio.com</p>
+            <p>Teléfono: +56 9 9999 9999</p>
+            <div>
+              <a href="#" className="text-white me-2"><i className="bi bi-facebook"></i></a>
+              <a href="#" className="text-white me-2"><i className="bi bi-instagram"></i></a>
+              <a href="#" className="text-white"><i className="bi bi-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+
+        {/* Línea inferior */}
+        <div className="text-center pt-3 border-top border-light">
+          <p className="mb-1">
+            &copy; 2025 YUMI AUTOSERVICE. Todos los derechos reservados.
+          </p>
+          <small>Hecho con ❤️</small>
+        </div>
       </div>
     </footer>
   );

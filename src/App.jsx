@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Contacto from "./components/Contacto";
 import Home from "./components/Home";
+import QuienesSomos from "./components/QuienesSomos";
 import Footer from "./components/Footer";
 import "./style/App.css";
 import "./style/layout.css";
@@ -15,6 +16,7 @@ function App() {
         <div className="layout">                      {/* Contenedor para el contenido de la página */}
           <Routes>                                    {/* Rutas para contenido dinámico */}
             <Route path="/" element={<Home />} />
+            <Route path="/quienes-somos" element={<QuienesSomos />} />
             <Route path="/contacto" element={<Contacto />} />
           </Routes>
         </div>
