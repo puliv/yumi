@@ -61,5 +61,5 @@ footer {
 }
 
 button, button:focus-visible {
-  outline: none;
+  outline: none !important;
 }

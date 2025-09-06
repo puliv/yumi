@@ -6,28 +6,6 @@ function Navbar() {
   return (
     <nav className="navbar fixed-top ">
       <div className="container-fluid">
-        <ul className="nav">
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Inicio
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Nosotros
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Catálogo
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Contacto
-            </a>
-          </li>
-        </ul>
         <div className="navbar-brand">
           <a className="navbar-brand" href="#">
             <img src={yumi} alt="" width="100" height="auto" />

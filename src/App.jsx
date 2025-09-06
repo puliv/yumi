@@ -71,6 +71,8 @@ function App() {
   };
   return (
     <>
+      {/* Puli: convertir a componente y configurar estilo para que se muestre por encima del footer */}
+      {/* Puli: todo el contenido de productos y carrito debería ir dentro del componente HOME */}
       <Productos carrito={carrito} agregarProducto={agregarProducto} />
       <Carrito
         carrito={carrito}
@@ -81,10 +83,6 @@ function App() {
         eliminarProducto={eliminarProducto}
         vaciarCarrito={vaciarCarrito}
       />
-
-      {/* Puli: convertir a componente y configurar estilo para que se muestre por encima del footer */}
-      {/* Puli: todo el contenido de productos y carrito debería ir dentro del componente HOME */}
-
       {/* Botón flotante que aparece solo cuando el carrito está cerrado */}
       {!mostrarCarrito && (
         <button
@@ -102,6 +100,7 @@ function App() {
           )}
         </button>
       )}
+
       <Router>
         <div className="App">
           {/* Contenedor principal de la aplicación */}
