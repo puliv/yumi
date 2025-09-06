@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../style/Contacto.css";
+import Swal from "sweetalert2";
 
 function ContactForm() {
   const [email, setEmail] = useState("");
@@ -12,19 +13,49 @@ function ContactForm() {
     const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!email) {
-      alert("Por favor, ingresa un correo electrónico.");
+      //alert("Por favor, ingresa un correo electrónico.");
+      //Swal.fire("Por favor, ingresa un correo electrónico.", "correo@mail.com");
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor, ingresa un correo electrónico.',
+        icon: 'error',                   // icono rojo
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#dc3545'    // rojo
+      })
       return;
     }
     if (!emailValido.test(email)) {
-      alert("Por favor, ingresa un correo válido (nombre@correo.com).");
+      //alert("Por favor, ingresa un correo válido (nombre@correo.com).");
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor, ingresa un correo válido (nombre@correo.com).',
+        icon: 'error',                   // icono rojo
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#dc3545'    // rojo
+      })
       return;
     }
     if (!mensaje) {
-      alert("Por favor, escribe un mensaje.");
+      //alert("Por favor, escribe un mensaje.");
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor, escribe un mensaje.',
+        icon: 'error',                   // icono rojo
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#dc3545'    // rojo
+      })
+      
       return;
     }
 
-    alert("Formulario enviado con éxito ✅");
+    //alert("Formulario enviado con éxito ✅");
+    Swal.fire({
+      title: '¡Enviado!',
+      text: 'Tu formulario se ha enviado correctamente.',
+      icon: 'success',               // icono verde de éxito
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#28a745'  // verde (Bootstrap "success")
+    });
     // Aquí más adelante puedes hacer un fetch o axios para enviar los datos
   };
 
@@ -39,7 +70,7 @@ function ContactForm() {
             type="email"
             className="form-control"
             id="exampleFormControlInput1"
-            placeholder="name@example.com"
+            placeholder="correo@mail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -58,7 +89,7 @@ function ContactForm() {
           ></textarea>
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-danger">
           Enviar
         </button>
       </form>

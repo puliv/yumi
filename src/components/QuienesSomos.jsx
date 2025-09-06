@@ -1,3 +1,5 @@
+import "../style/QuienesSomos.css";
+
 function QuienesSomos() {
   return (
     <div className="container my-5">
