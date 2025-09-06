@@ -5,6 +5,11 @@
 
 .nav-link {
   color: #fff !important;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
 }
 
 .menu-btn .btn {
@@ -21,6 +26,4 @@
   color: #ff3131;
   border-color: #ff3131 !important;
   box-shadow: none;
-  outline: none;
 }
-

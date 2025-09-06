@@ -1,14 +1,50 @@
-# React + Vite
+# yumi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Software web de autoservicio** desarrollado con **ReactJS** y **Bootstrap**, creado para aprobar ramo de Desarrollo Fullstack II.  
+➡️ [Repositorio en GitHub](https://github.com/puliv/yumi)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📑 Índice
 
-## Expanding the ESLint configuration
+1. [Descripción](#descripción)
+2. [Tecnologías](#tecnologías)
+3. [Instalación](#instalación)
+4. [Uso](#uso)
+5. [Estructura del proyecto](#estructura-del-proyecto)
+6. [Configuración adicional](#configuración-adicional)
+7. [Contribuciones](#contribuciones)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
 
-#Cambio de Iván para prueba de new branch
+## 📌 Descripción
+
+Este proyecto es una **plataforma web de autoservicio**, desarrollada durante el cuarto semestre de la carrera Analista Programador para el ramo **Desarrollo Fullstack II**.  
+Este sitio permite a los usuarios interactuar de forma intuitiva con un sistema automatizado, aprovechando las capacidades de ReactJS junto con el framework de CSS: Bootstrap.
+
+---
+
+## 🛠 Tecnologías usadas
+
+- **ReactJS** – Biblioteca principal para construir la interfaz de usuario.
+- **Bootstrap** – Framework CSS para diseño responsive.
+- **Vite** – Herramienta de bundling y dev server moderna.
+- **ESLint** – Configuración presente para mantener la calidad del código.
+
+---
+
+## ⚙️ Instalación
+
+Instrucciones para levantar el proyecto en tu entorno local:
+
+```bash
+# Clona el repositorio
+git clone https://github.com/puliv/yumi.git
+cd yumi
+
+# Instala dependencias
+npm install
+
+# Ejecuta el servidor de desarrollo
+npm run dev
+```

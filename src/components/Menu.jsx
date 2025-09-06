@@ -31,6 +31,11 @@ export default function Menu() {
           </li>
           <li className="off-canvas-body-list-item">
             <a className="off-canvas-body-list-link" href="#">
+              Nosotros
+            </a>
+          </li>
+          <li className="off-canvas-body-list-item">
+            <a className="off-canvas-body-list-link" href="#">
               Catálogo
             </a>
           </li>
