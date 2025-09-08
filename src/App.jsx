@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import Productos from "./components/Productos";
-import Carrito from "./components/Carrito";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Contacto from "./components/Contacto";
@@ -8,113 +5,27 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import "./style/App.css";
 import "./style/layout.css";
+import Menu from "./components/Menu";
 
 function App() {
-  // Se comprueba si existe un carrito almacenado
-  const [carrito, setCarrito] = useState(() => {
-    const almacenado = localStorage.getItem("carrito");
-    return almacenado ? JSON.parse(almacenado) : [];
-  });
-
-  // Estado para mostrar/ocultar el modal
-  const [mostrarCarrito, setMostrarCarrito] = useState(false);
-
-  // Se guarda carrito en localStorage cada vez que cambie
-  useEffect(() => {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-  }, [carrito]);
-
-  // Agregar producto (si ya existe, solo aumenta cantidad)
-  const agregarProducto = (producto) => {
-    setCarrito((prev) => {
-      const existente = prev.find((item) => item.id === producto.id);
-      if (existente) {
-        return prev.map((item) =>
-          item.id === producto.id
-            ? { ...item, cantidad: item.cantidad + 1 }
-            : item
-        );
-      } else {
-        return [...prev, { ...producto, cantidad: 1 }];
-      }
-    });
-  };
-
-  // Incrementar cantidad
-  const incrementarCantidad = (id) => {
-    setCarrito((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, cantidad: item.cantidad + 1 } : item
-      )
-    );
-  };
-
-  // Disminuir cantidad (si llega a 0 se elimina)
-  const disminuirCantidad = (id) => {
-    setCarrito((prev) =>
-      prev
-        .map((item) =>
-          item.id === id ? { ...item, cantidad: item.cantidad - 1 } : item
-        )
-        .filter((item) => item.cantidad > 0)
-    );
-  };
-
-  // Eliminar un producto por ID
-  const eliminarProducto = (id) => {
-    setCarrito((prev) => prev.filter((item) => item.id !== id));
-  };
-
-  // Función para vaciar el carrito
-  const vaciarCarrito = () => {
-    setCarrito([]);
-  };
   return (
     <>
-      <Productos carrito={carrito} agregarProducto={agregarProducto} />
-      <Carrito
-        carrito={carrito}
-        mostrarCarrito={mostrarCarrito}
-        setMostrarCarrito={setMostrarCarrito}
-        incrementarCantidad={incrementarCantidad}
-        disminuirCantidad={disminuirCantidad}
-        eliminarProducto={eliminarProducto}
-        vaciarCarrito={vaciarCarrito}
-      />
-
-      {/* Puli: convertir a componente y configurar estilo para que se muestre por encima del footer */}
-      {/* Puli: todo el contenido de productos y carrito debería ir dentro del componente HOME */}
-
-      {/* Botón flotante que aparece solo cuando el carrito está cerrado */}
-      {!mostrarCarrito && (
-        <button
-          className="btn btn-primary boton-flotante"
-          onClick={() => setMostrarCarrito(true)}
-        >
-          <i
-            className="bi bi-cart"
-            style={{ fontSize: "2rem", backgroundColor: "#ff3131" }}
-          ></i>
-          {carrito.reduce((acc, item) => acc + item.cantidad, 0) > 0 && (
-            <span className="badge bg-danger position-absolute top-0 start-100 translate-middle">
-              {carrito.reduce((acc, item) => acc + item.cantidad, 0)}
-            </span>
-          )}
-        </button>
-      )}
       <Router>
         <div className="App">
-          {/* Contenedor principal de la aplicación */}
-          <Navbar /> Navbar siempre visible
+          {/* Navbar siempre visible */}
+          <Menu />
+          <Navbar />
+          {/* Contenedor de rutas */}
           <div className="layout">
-            {/* Contenedor para el contenido de la página */}
             <Routes>
-              {/* Rutas para contenido dinámico */}
-              <Route path="/" element={<Home />} />
+              {/* Rutas dinámicas */}
+              <Route path="/" element={<Home/>}/>
+              <Route path="/catalogo" element={<Home/>}/>
               <Route path="/contacto" element={<Contacto />} />
             </Routes>
           </div>
-          <Footer /> {/* Footer siempre visible */}
+          {/* Footer siempre visible */}
+          <Footer />
         </div>
       </Router>
     </>

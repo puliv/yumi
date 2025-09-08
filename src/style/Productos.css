@@ -38,3 +38,41 @@
     transform: translateY(3px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+.img-producto {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.boton-pag {
+    transition: transform 0.1s, box-shadow 0.1s, background-color 0.3s, border 0.3s;
+    cursor: pointer;
+    border: 2px solid #ff3131;
+    border-radius: 6px;
+    padding: 8px 16px;
+    background-color: white;
+    color: #ff3131;
+    margin: 0 5px;
+}
+
+.boton-pag:hover {
+    background-color: #ff3131;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-color: #ff3131;
+}
+
+/* Estado activo */
+.boton-pag:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón seleccionado*/
+.boton-pag.active {
+    background-color: #ff3131;
+    color: white;
+}

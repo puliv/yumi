@@ -1,6 +1,6 @@
 import "../style/Navbar.css";
 import yumi from "../assets/yumi_blanco.png";
-import Menu from "./Menu";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -8,9 +8,9 @@ function Navbar() {
       <div className="container-fluid">
         <ul className="nav">
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/">
               Inicio
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
@@ -18,14 +18,14 @@ function Navbar() {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/catalogo">
               Catálogo
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/contacto">
               Contacto
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="navbar-brand">
@@ -57,8 +57,6 @@ function Navbar() {
           </button>
         </div>
       </div>
-
-      <Menu />
     </nav>
   );
 }
