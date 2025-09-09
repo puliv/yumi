@@ -1,5 +1,0 @@
-.layout {
-  /* altura del navbar fijo, permite que el contenido se vea luego del navbar */
-  min-height: calc(100vh - 70px - 100px);
-  /* altura total menos navbar y footer */
-}

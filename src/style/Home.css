@@ -1,21 +1,32 @@
 .home {
-  background: url('../assets/home-img.jpg') no-repeat center 25%;
-  background-size: cover;
   height: 100vh;
   width: 100%;
   position: relative;
+  flex: 1;
+  
+  .bienvenida {
+    background: url('../assets/home-img.jpg') no-repeat center 25%;
+    background-size: cover;
+    height: 20%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
 
-  button {
-    background-color: #ff3131;
-    border-color: #ff3131;
-  }
+    button {
+      background-color: #ff3131;
+      border-color: #ff3131;
+    }
 
-  button:hover, button:focus-visible, button:active {
-    background-color: white !important;
-    color: #ff3131 !important;
-    border-color: #ff3131 !important;
-    color: #ff3131 !important;
-    box-shadow: none;
-    outline: none !important;
+    button:hover, button:focus-visible, button:active {
+      background-color: white !important;
+      color: #ff3131 !important;
+      border-color: #ff3131 !important;
+      color: #ff3131 !important;
+      box-shadow: none;
+      outline: none !important;
+    }
   }
 }

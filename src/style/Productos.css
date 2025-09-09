@@ -1,3 +1,15 @@
+.productos {
+    min-height: calc(100vh - 100px);
+    /* Ajusta según el alto de tu header y footer */
+    padding: 2rem;
+}
+
+/* Ajuste de filas y columnas */
+.productos .row {
+    margin: 0 -0.5rem;
+    /* compensa el padding de las columnas */
+}
+
 .texto-gris {
     color: #a5a6a9;
 }

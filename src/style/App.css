@@ -1,32 +1,13 @@
-#root {
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 html, body, #root {
+  width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* 2. Layout principal como columna flexible */
-.App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  /* altura mínima = altura de la ventana */
-}
-
-/* 3. El main (Home) crece para empujar el footer */
-.App>div:first-child {
-  flex: 1;
-}
-
-/* 4. Footer ocupa todo el ancho */
 footer {
   width: 100%;
+  text-align: center;
 }
 
 .card {
