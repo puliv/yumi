@@ -1,0 +1,30 @@
+.boton-flotante {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    border-radius: 50% !important;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background-color: #ff3131 !important;
+    border-color: #ff3131 !important;
+}
+
+.boton-flotante:hover {
+    box-shadow: 0 0 20px 1px rgba(255, 49, 49, 0.7);
+}
+
+/* Para que el badge se vea bien dentro del botón */
+.boton-flotante .badge {
+    font-size: 0.75rem;
+    padding: 6px 8px;
+}
+
+button, button:focus-visible {
+    outline: none;
+}
