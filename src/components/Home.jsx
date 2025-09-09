@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Productos from "./Productos";
 import Carrito from "./Carrito";
 import CarritoBoton from "./CarritoBoton";
 import "../style/Home.css";
-import { Link } from "react-router-dom";
+
 
 export default function Home() {
+  //Referencia para hacer scroll a seccion de productos
+  const productsRef = useRef(null);
+
   // Estado carrito con persistencia en localStorage
   const [carrito, setCarrito] = useState(() => {
     const almacenado = localStorage.getItem("carrito");
@@ -59,19 +62,36 @@ export default function Home() {
   const vaciarCarrito = () => {
     setCarrito([]);
   };
+
+  const scrollToRef = (ref) => {
+    if (!ref?.current) return;
+    const header = document.querySelector(".navbar");
+    const headerHeight = header ? header.offsetHeight : 0;
+
+    const top = ref.current.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: top - headerHeight, // resta altura real del nav
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="home">
       <div className="bienvenida">
         <h1 className="display-4 fw-bold">Tu almacén, sin filas ni esperas</h1>
         <h5 className="lead">Compra fácil, rápido y a tu ritmo</h5>
-        <Link to="/productos">
-          <button className="btn btn-primary mt-3" to="/productos">
-            COMPRAR
-          </button>
-        </Link>
+        <button
+          className="btn btn-primary mt-3"
+          onClick={() => scrollToRef(productsRef)}
+        >
+          COMPRAR
+        </button>
       </div>
-
-      <Productos carrito={carrito} agregarProducto={agregarProducto} />
+      <Productos
+        ref={productsRef}
+        carrito={carrito}
+        agregarProducto={agregarProducto}
+      />
       <Carrito
         carrito={carrito}
         mostrarCarrito={mostrarCarrito}

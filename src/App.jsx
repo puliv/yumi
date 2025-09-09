@@ -6,11 +6,13 @@ import QuienesSomos from "./components/QuienesSomos";
 import Footer from "./components/Footer";
 import Productos from "./components/Productos";
 import "./style/App.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <div className="App d-flex flex-column min-vh-100">
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,7 +21,7 @@ function App() {
           <Route path="/productos" element={<Productos />} />
         </Routes>
       </div>
-      <Footer /> 
+      <Footer />
     </Router>
   );
 }

@@ -1,13 +1,18 @@
 import "../style/Menu.css";
 import yumi from "../assets/yumi-color.png";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 export default function Menu() {
+  const offcanvasRef = useRef(null);
+
   return (
     <div
       className="offcanvas offcanvas-start"
       tabIndex="-1"
       id="offcanvasExample"
       aria-labelledby="offcanvasExampleLabel"
+      ref={offcanvasRef}
     >
       <div className="offcanvas-header">
         <img src={yumi} alt="" width="180" height="auto" />
@@ -24,25 +29,45 @@ export default function Menu() {
       </div>
       <div className="offcanvas-body">
         <ul className="off-canvas-body-list">
-          <li className="off-canvas-body-list-item">
-            <a className="off-canvas-body-list-link" href="#">
+          <li
+            className="off-canvas-body-list-item"
+            // onClick={() => handleClick("/")}
+            data-bs-dismiss="offcanvas"
+          >
+            <Link className="off-canvas-body-list-link" to="/">
               Inicio
-            </a>
+            </Link>
           </li>
-          <li className="off-canvas-body-list-item">
-            <a className="off-canvas-body-list-link" href="#">
+          <li
+            className="off-canvas-body-list-item"
+            // onClick={() => handleClick("/quienes-somos")}
+            data-bs-dismiss="offcanvas"
+          >
+            <Link
+              className="off-canvas-body-list-link"
+              href="#"
+              to="/quienes-somos"
+            >
               Nosotros
-            </a>
+            </Link>
           </li>
-          <li className="off-canvas-body-list-item">
-            <a className="off-canvas-body-list-link" href="#">
+          <li
+            className="off-canvas-body-list-item"
+            // onClick={() => handleClick("/productos")}
+            data-bs-dismiss="offcanvas"
+          >
+            <Link className="off-canvas-body-list-link" to="/productos">
               Catálogo
-            </a>
+            </Link>
           </li>
-          <li className="off-canvas-body-list-item">
-            <a className="off-canvas-body-list-link" href="#">
+          <li
+            className="off-canvas-body-list-item"
+            // onClick={() => handleClick("/contacto")}
+            data-bs-dismiss="offcanvas"
+          >
+            <Link className="off-canvas-body-list-link" to="/contacto">
               Contacto
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

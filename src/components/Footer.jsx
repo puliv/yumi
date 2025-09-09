@@ -1,12 +1,23 @@
 import "../style/Footer.css";
 import yumi from "../assets/yumi_blanco.png";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (location.pathname === "/") {
+      // Estás en Home → hacer scroll
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // No estás en Home → navegar a Home
+      navigate("/");
+    }
+  };
+
   return (
-    <footer
-      id="footer"
-      className="footer bg-dark text-white py-4 mt-auto"
-    >
+    <footer id="footer" className="footer bg-dark text-white py-4 mt-auto">
       <div className="container">
         <div className="row">
           {/* Columna 1 - Información de la empresa */}
@@ -19,13 +30,18 @@ function Footer() {
           <div className="col-md-4 mb-3">
             <h5>Enlaces</h5>
             <ul className="list-unstyled">
-              <li>
-                <a href="/" className="text-white text-decoration-none">
-                  Inicio
-                </a>
+              <li
+                onClick={() => handleClick()}
+                className="text-white text-decoration-none"
+              >
+                {/* <a href=" ">Inicio</a> */}
+                Inicio
               </li>
               <li>
-                <a href="/productos" className="text-white text-decoration-none">
+                <a
+                  href="/productos"
+                  className="text-white text-decoration-none"
+                >
                   Catálogo
                 </a>
               </li>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import productos from "../data/productos";
 import "../style/Productos.css";
 
-export const Productos = ({ agregarProducto }) => {
+export const Productos = ({ ref, agregarProducto }) => {
   // Estado para la categoría seleccionada
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
@@ -15,8 +15,16 @@ export const Productos = ({ agregarProducto }) => {
       ? productos
       : productos.filter((p) => p.categoria === categoriaSeleccionada);
 
+  // Calcular el alto del header para ajustar el margen superior
+  const header = document.querySelector(".navbar");
+  const headerHeight = header ? header.offsetHeight : 0;
+
   return (
-    <div className="productos min-vh-100">
+    <div
+      className="productos min-vh-100"
+      ref={ref}
+      style={{ marginTop: headerHeight }}
+    >
       <div className="row">
         {/* <h1 className="mb-4 text-center">Lista de Productos</h1> */}
         {/* Botones de categorías */}

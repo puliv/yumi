@@ -1,19 +1,24 @@
 import "../style/Navbar.css";
 import yumi from "../assets/yumi_blanco.png";
 import { Link } from "react-router-dom";
+import Menu from "./Menu";
 
 function Navbar() {
   return (
-    <nav className="navbar fixed-top ">
+    <nav className="navbar fixed-top">
       <div className="container-fluid">
-        <ul className="nav">
+        <ul className="nav d-none d-lg-flex">
           <li className="nav-item">
             <Link className="nav-link" to="/">
               Inicio
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="#" to="/quienes-somos">
+            <Link
+              className="nav-link"
+              href="#"
+              to="/quienes-somos"
+            >
               Nosotros
             </Link>
           </li>
@@ -29,9 +34,9 @@ function Navbar() {
           </li>
         </ul>
         <div className="navbar-brand">
-          <a className="navbar-brand" href="#">
+          <Link className="nav-link" to="/">
             <img src={yumi} alt="" width="100" height="auto" />
-          </a>
+          </Link>
         </div>
         <div className="menu-btn">
           <button
@@ -57,6 +62,7 @@ function Navbar() {
           </button>
         </div>
       </div>
+      <Menu />
     </nav>
   );
 }

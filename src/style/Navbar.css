@@ -1,6 +1,10 @@
 .navbar {
   background-color: #ff3131;
-  /* color principal */
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
 }
 
 .nav-link {
@@ -9,7 +13,21 @@
   &:hover {
     text-decoration: underline;
   }
+}
 
+.nav {
+  flex: 1;
+}
+
+.navbar-brand {
+  flex: 0;
+  margin: 0 !important;
+}
+
+.menu-btn {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .menu-btn .btn {
@@ -21,7 +39,8 @@
 
 .menu-btn .btn:hover,
 .menu-btn .btn:active,
-.menu-btn .btn:focus-visible {
+.menu-btn .btn:focus-visible,
+.menu-btn .btn:focus {
   background-color: #fff !important;
   color: #ff3131;
   border-color: #ff3131 !important;

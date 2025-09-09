@@ -59,75 +59,104 @@ const Carrito = ({ carrito, mostrarCarrito, setMostrarCarrito, incrementarCantid
     };
     
     return (
-        <div className="carrito-flotante">
-            <div className="modal-content">
-                <div className="modal-header mb-3">
-                    <h5 className="modal-title">Mi carrito de compras</h5>
-                    <button className="btn-close" onClick={() => setMostrarCarrito(false)}></button>
-                </div>
+      <div className="carrito-flotante">
+        <div className="modal-content">
+          <div className="modal-header mb-3">
+            <h5 className="modal-title">Mi carrito de compras</h5>
+            <button
+              className="btn-close"
+              onClick={() => setMostrarCarrito(false)}
+            ></button>
+          </div>
 
-                <div className="modal-body">
-                    {carrito.length === 0 ? (
-                        <p>Tu carrito está vacío.</p>
-                    ) : (
-                        <div className="carrito-lista">
-                            <ul className="list-group">
-                                {carrito.map((item) => (
-                                <li key={item.id} 
-                                    className="list-group-item d-flex justify-content-between align-items-center"
-                                >
-                                    <div className="d-flex align-items-center">
-                                        <div className="flex-shrink-0 me-2">
-                                            <img
-                                            src={item.imagen}
-                                            alt={item.nombre}
-                                            style={{objectFit: "cover", width: "50px", height: "50px"}} />
-                                        </div>
-                                        <div className="flex-grow-1 text-start">
-                                            <strong>{item.nombre}</strong><br />
-                                            <small>${item.precio.toLocaleString("es-CL")} c/u</small>
-                                        </div>
-                                    </div>
-
-                                    <div className="d-flex align-items-center">
-                                        <button className="btn btn-sm btn-warning me-2" onClick={() => disminuirCantidad(item.id)}>
-                                            -
-                                        </button>
-                                        <span>{item.cantidad}</span>
-                                        <button className="btn btn-sm btn-success ms-2" onClick={() => incrementarCantidad(item.id)}>
-                                            +
-                                        </button>
-                                        <button className="btn btn-sm btn-danger ms-3" onClick={() => handleEliminarProducto(item.id, item.nombre)}>
-                                            X
-                                        </button>
-                                    </div>
-                                </li>
-                                ))}
-                            </ul>
+          <div className="modal-body">
+            {carrito.length === 0 ? (
+              <p>Tu carrito está vacío.</p>
+            ) : (
+              <div className="carrito-lista">
+                <ul className="list-group">
+                  {carrito.map((item) => (
+                    <li
+                      key={item.id}
+                      className="list-group-item d-flex justify-content-between align-items-center"
+                    >
+                      <div className="d-flex align-items-center">
+                        <div className="flex-shrink-0 me-2">
+                          <img
+                            src={item.imagen}
+                            alt={item.nombre}
+                            style={{
+                              objectFit: "cover",
+                              width: "50px",
+                              height: "50px",
+                            }}
+                          />
                         </div>
-                    )}
-                </div>
+                        <div className="flex-grow-1 text-start">
+                          <strong>{item.nombre}</strong>
+                          <br />
+                          <small>
+                            ${item.precio.toLocaleString("es-CL")} c/u
+                          </small>
+                        </div>
+                      </div>
 
-                {carrito.length > 0 && (
-                <div className="modal-footer d-flex flex-column align-items-center">
-                    <h5 className="my-2">Total: ${total.toLocaleString("es-CL")}</h5>
-                    <div className="d-flex justify-content-between w-100">
-                        {/*
+                      <div className="d-flex align-items-center">
+                        <button
+                          className="btn btn-sm btn-warning me-2 btn-disminuir"
+                          onClick={() => disminuirCantidad(item.id)}
+                        >
+                          -
+                        </button>
+                        <span>{item.cantidad}</span>
+                        <button
+                          className="btn btn-sm btn-success ms-2 btn-incrementar"
+                          onClick={() => incrementarCantidad(item.id)}
+                        >
+                          +
+                        </button>
+                        <button
+                          className="btn btn-sm btn-danger ms-3"
+                          onClick={() =>
+                            handleEliminarProducto(item.id, item.nombre)
+                          }
+                        >
+                          X
+                        </button>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          {carrito.length > 0 && (
+            <div className="modal-footer d-flex flex-column align-items-center ">
+              <h5 className="my-2">Total: ${total.toLocaleString("es-CL")}</h5>
+              <div className="d-flex justify-content-between w-100">
+                {/*
                         <button className="btn btn-secondary" onClick={() => setMostrarCarrito(false)}>
                             Cerrar
                         </button>
                         */}
-                        <button className="btn btn-warning" onClick={handleVaciarCarrito}>
-                            Vaciar carrito
-                        </button>
-                        <button className="btn btn-primary" onClick={() => handleFinalizarCompra(total)}>
-                            Finalizar compra
-                        </button>
-                    </div>
-                </div>
-                )}
+                <button
+                  className="btn btn-warning btn-vaciar"
+                  onClick={handleVaciarCarrito}
+                >
+                  Vaciar carrito
+                </button>
+                <button
+                  className="btn btn-primary btn-fin-compra"
+                  onClick={() => handleFinalizarCompra(total)}
+                >
+                  Finalizar compra
+                </button>
+              </div>
             </div>
+          )}
         </div>
+      </div>
     );
 };
 
