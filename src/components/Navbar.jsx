@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className="navbar fixed-top">
       <div className="container-fluid">
-        <ul className="nav d-none d-lg-flex">
+        {/* <ul className="nav d-none d-lg-flex">
           <li className="nav-item">
             <Link className="nav-link" to="/">
               Inicio
@@ -32,7 +32,7 @@ function Navbar() {
               Contacto
             </Link>
           </li>
-        </ul>
+        </ul> */}
         <div className="navbar-brand">
           <Link className="nav-link" to="/">
             <img src={yumi} alt="" width="100" height="auto" />
