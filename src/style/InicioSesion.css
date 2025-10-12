@@ -1,0 +1,99 @@
+/* Contenedor principal dividido en 2 */
+.inicio-sesion-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* Imagen */
+.inicio-sesion-imagen {
+    flex: 1;
+    background-image: url("../assets/home-img.jpg");
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+/* Contenedor del formulario */
+.inicio-sesion-formulario {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo interno del formulario */
+.formulario-inicio-sesion {
+    width: 80%;
+    max-width: 400px;
+    padding: 40px 50px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón con borde rojo y fondo blanco */
+.boton-rojo {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #dc3545 !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 0 0 !important;
+}
+.boton-rojo:hover {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+    border: 2px solid #dc3545 !important;
+}
+.boton-rojo:focus,
+.boton-rojo:active {
+    outline: none !important;
+    border: 2px solid #dc3545 !important;
+    box-shadow: none !important;
+}
+
+/* Enlace de registro tipo texto */
+.link-registrar {
+    color: #dc3545;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.link-registrar:hover {
+    color: #a71d2a;
+    text-decoration: underline;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+    .inicio-sesion-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .inicio-sesion-imagen {
+        height: 200px;
+        border-radius: 0;
+    }
+
+    .inicio-sesion-formulario {
+        border-radius: 0;
+        padding: 30px;
+    }
+
+    .formulario-inicio-sesion {
+        width: 100%;
+        max-width: 400px;
+        padding: 30px;
+    }
+}

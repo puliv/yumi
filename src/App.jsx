@@ -5,6 +5,8 @@ import Home from "./components/Home";
 import QuienesSomos from "./components/QuienesSomos";
 import Footer from "./components/Footer";
 import Productos from "./components/Productos";
+import InicioSesion from "./components/InicioSesion";
+import RegistrarUsuario from "./components/RegistrarUsuario"
 import "./style/App.css";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -19,6 +21,8 @@ function App() {
           <Route path="/quienes-somos" element={<QuienesSomos />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/productos" element={<Productos />} />
+          <Route path="/inicio-sesion" element={<InicioSesion />} />
+          <Route path="/registrar-usuario" element={<RegistrarUsuario />} />
         </Routes>
       </div>
       <Footer />

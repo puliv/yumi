@@ -39,6 +39,9 @@ function Navbar() {
           </Link>
         </div>
         <div className="menu-btn">
+          <Link to="/inicio-sesion" className="btn btn-login me-2">
+            <i className="bi bi-person-circle fs-5"></i>
+          </Link>
           <button
             className="btn btn-primary"
             type="button"

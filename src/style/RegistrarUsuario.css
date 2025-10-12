@@ -1,0 +1,95 @@
+/* Contenedor principal dividido en 2 */
+.registro-usuario-container {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    width: 100%;
+    background-color: #fff;
+    margin-top: 75px;
+}
+
+/* Imagen */
+.registro-usuario-imagen {
+    flex: 1;
+    background-image: url("../assets/home-img.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Contenedor del formulario */
+.registro-usuario-formulario {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo interno del formulario */
+.formulario-registro-usuario {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón */
+.boton-rojo {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #dc3545 !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 0 0 !important;
+}
+.boton-rojo:hover {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+    border: 2px solid #dc3545 !important;
+}
+.boton-rojo:focus,
+.boton-rojo:active {
+    outline: none !important;
+    border: 2px solid #dc3545 !important;
+    box-shadow: none !important;
+}
+
+/* Enlace de registro tipo texto */
+.link-inicio-sesion {
+    color: #dc3545;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.link-inicio-sesion:hover {
+    color: #a71d2a;
+    text-decoration: underline;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+    .registro-usuario-container {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+    .registro-usuario-imagen {
+        height: 200px;
+        border-radius: 0;
+    }
+
+    .registro-usuario-formulario {
+        border-radius: 0;
+        padding: 30px;
+    }
+
+    .formulario-registro-usuario {
+        max-width: 90%;
+        padding: 25px;
+    }
+}
