@@ -5,15 +5,16 @@
     width: 100%;
     background-color: #fff;
     margin-top: 75px;
-}
 
-/* Imagen */
-.registro-usuario-imagen {
     flex: 1;
     background-image: url("../assets/home-img.jpg");
     background-size: cover;
     background-position: center;
 }
+
+/* Imagen
+.registro-usuario-imagen {
+} */
 
 /* Contenedor del formulario */
 .registro-usuario-formulario {
@@ -23,8 +24,7 @@
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Estilo interno del formulario */
@@ -47,11 +47,13 @@
     transition: all 0.3s ease !important;
     box-shadow: 0 0 0 0 !important;
 }
+
 .boton-rojo:hover {
     background-color: #dc3545 !important;
     color: #fff !important;
     border: 2px solid #dc3545 !important;
 }
+
 .boton-rojo:focus,
 .boton-rojo:active {
     outline: none !important;
@@ -66,6 +68,7 @@
     text-decoration: none;
     transition: color 0.3s ease;
 }
+
 .link-inicio-sesion:hover {
     color: #a71d2a;
     text-decoration: underline;

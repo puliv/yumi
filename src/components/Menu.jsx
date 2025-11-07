@@ -31,7 +31,6 @@ export default function Menu() {
         <ul className="off-canvas-body-list">
           <li
             className="off-canvas-body-list-item"
-            // onClick={() => handleClick("/")}
             data-bs-dismiss="offcanvas"
           >
             <Link className="off-canvas-body-list-link" to="/">
@@ -40,7 +39,6 @@ export default function Menu() {
           </li>
           <li
             className="off-canvas-body-list-item"
-            // onClick={() => handleClick("/quienes-somos")}
             data-bs-dismiss="offcanvas"
           >
             <Link
@@ -53,7 +51,6 @@ export default function Menu() {
           </li>
           <li
             className="off-canvas-body-list-item"
-            // onClick={() => handleClick("/productos")}
             data-bs-dismiss="offcanvas"
           >
             <Link className="off-canvas-body-list-link" to="/productos">
@@ -62,7 +59,6 @@ export default function Menu() {
           </li>
           <li
             className="off-canvas-body-list-item"
-            // onClick={() => handleClick("/contacto")}
             data-bs-dismiss="offcanvas"
           >
             <Link className="off-canvas-body-list-link" to="/contacto">

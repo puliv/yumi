@@ -1,24 +1,23 @@
 import LoginForm from "./LoginForm";
+import ScrollToTop from "./ScrollToTop";
 
 function InicioSesion() {
+  // Calcular el alto del header para ajustar el margen superior
+  const header = document.querySelector(".navbar");
+  const headerHeight = header ? header.offsetHeight : 0;
 
-    return (
+  return (
     <>
-        <div className="inicio-sesion-container">
-            {/* Imagen lado izquierdo */}
-            <div className="inicio-sesion-imagen"></div>
-
-            {/* Formulario lado derecho */}
-            <div className="inicio-sesion-formulario">
-                <h1 className="text-center my-4 fw-bold">Iniciar Sesión</h1>
-                <p className="text-center mb-4">
-                    Accede a tu cuenta para continuar
-                </p>
-                <LoginForm />
-            </div>
+      <div
+        className="inicio-sesion-container"
+        style={{ marginTop: headerHeight }}
+      >
+        <div className="inicio-sesion-formulario">
+          <LoginForm />
         </div>
+      </div>
     </>
-    );
+  );
 }
 
 export default InicioSesion;
