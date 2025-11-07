@@ -1,5 +1,3 @@
-// CarritoBoton.jsx
-import React from "react";
 import "../style/CarritoBoton.css";
 
 const CarritoBoton = ({ carrito, mostrarCarrito, setMostrarCarrito }) => {
