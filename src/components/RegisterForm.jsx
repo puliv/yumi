@@ -13,6 +13,58 @@ function RegisterForm() {
   const [mostrarContrasena, setMostrarContrasena] = useState(false);
   const navigate = useNavigate();
 
+  async function signup(name, lastname, mail, pass, phone) {
+    const signupUrl = "http://localhost:8080/signup";
+
+    // Verificación básica de datos
+    if (!name || !mail || !pass) {
+      throw new Error("Nombre, correo y contraseña son obligatorios.");
+    }
+
+    try {
+      const response = await fetch(signupUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          lastname: lastname,
+          mail: mail,
+          pass: pass,
+          phone: phone,
+        }),
+      });
+
+      // El backend devuelve 201 CREATED si es exitoso
+      if (response.status === 201) {
+        const newUser = await response.json();
+
+        Swal.fire({
+          title: "¡Registro exitoso!",
+          icon: "success",
+          confirmButtonText: "Aceptar",
+          confirmButtonColor: "#28a745",
+        }).then(() => {
+          navigate("/inicio-sesion");
+        });
+        return newUser;
+      }
+
+      // Manejar errores como 400 Bad Request (si el correo ya existe, etc.)
+      const errorData = await response
+        .json()
+        .catch(() => ({ message: "Error desconocido." }));
+      const errorMessage =
+        errorData.message || `Fallo en el registro: Estado ${response.status}`;
+
+      throw new Error(errorMessage);
+    } catch (error) {
+      console.error("Error al intentar registrar:", error.message);
+      throw error;
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -94,15 +146,7 @@ function RegisterForm() {
       return;
     }
 
-    Swal.fire({
-      title: "¡Inicio de sesión exitoso!",
-      text: "Has iniciado sesión correctamente.",
-      icon: "success",
-      confirmButtonText: "Aceptar",
-      confirmButtonColor: "#28a745",
-    }).then(() => {
-      navigate("/inicio-sesion");
-    });
+    signup(nombre, apellido, email, contrasena, telefono);
   };
 
   return (

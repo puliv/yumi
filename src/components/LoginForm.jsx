@@ -9,6 +9,55 @@ function LoginForm() {
   const [recordarme, setRecordarme] = useState("");
   const navigate = useNavigate();
 
+  async function login(username, password) {
+    const loginUrl = "http://localhost:8080/login";
+
+    try {
+      const response = await fetch(loginUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json", // Indica que el cuerpo es JSON
+        },
+        // El cuerpo de la petición debe contener las credenciales
+        body: JSON.stringify({
+          mail: username,
+          pass: password,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        const errorMessage =
+          errorData.message ||
+          `Fallo en la petición: Estado ${response.status}`;
+
+        throw new Error(errorMessage);
+      }
+
+      const data = await response.json();
+      Swal.fire({
+        title: `¡Hola, ${data.name}!`,
+        text: "Inicio de sesión exitoso",
+        icon: "success",
+        confirmButtonText: "Aceptar",
+        confirmButtonColor: "#28a745",
+      }).then(() => {
+        // Redirigir al usuario después de cerrar la alerta
+        navigate("/home");
+      });
+      return data;
+    } catch (error) {
+      Swal.fire({
+        title: "Error",
+        text: "Las credenciales no son validas.",
+        icon: "error",
+        confirmButtonText: "Aceptar",
+        confirmButtonColor: "#dc3545",
+      });
+      throw error;
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -46,16 +95,7 @@ function LoginForm() {
       return;
     }
 
-    Swal.fire({
-      title: "¡Inicio de sesión exitoso!",
-      text: "Has iniciado sesión correctamente.",
-      icon: "success",
-      confirmButtonText: "Aceptar",
-      confirmButtonColor: "#28a745",
-    }).then(() => {
-      // Redirigir al usuario después de cerrar la alerta
-      navigate("/");
-    });
+    login(email, contrasena);
   };
 
   return (
