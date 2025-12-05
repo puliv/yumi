@@ -11,29 +11,15 @@ import "./style/App.css";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-  fetch("http://localhost:8080/hola") // Asegúrate de usar la URL correcta de tu API
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.text();
-    })
-    .then((data) => {
-      console.log(data); // Datos recibidos del Spring Boot
-      // Actualiza el estado de tu componente React aquí
-    })
-    .catch((error) => {
-      console.error("There was a problem with the fetch operation:", error);
-    });
-
   return (
     <Router>
       <div className="App d-flex flex-column min-vh-100">
         <ScrollToTop />
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<InicioSesion />} />
           <Route path="/quienes-somos" element={<QuienesSomos />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/productos" element={<Productos />} />
           <Route path="/inicio-sesion" element={<InicioSesion />} />

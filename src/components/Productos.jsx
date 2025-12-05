@@ -1,19 +1,36 @@
-import { useState } from "react";
-import productos from "../data/productos";
+import { useEffect, useState } from "react";
 import "../style/Productos.css";
 
 export const Productos = ({ ref, agregarProducto }) => {
+  const [productos, setProductos] = useState([]);
   // Estado para la categoría seleccionada
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
+  useEffect(() => {
+    fetch("http://localhost:8080/products")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setProductos(data);
+      })
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
+      });
+  }, []);
+
   // Obtener categorías únicas desde los datos
-  const categorias = ["todos", ...new Set(productos.map((p) => p.categoria))];
+  const categorias = ["todos", ...new Set(productos.map((p) => p.category))];
 
   // Filtrar productos según categoría
   const productosFiltrados =
     categoriaSeleccionada === "todos"
       ? productos
-      : productos.filter((p) => p.categoria === categoriaSeleccionada);
+      : productos.filter((p) => p.category === categoriaSeleccionada);
 
   // Calcular el alto del header para ajustar el margen superior
   const header = document.querySelector(".navbar");
@@ -26,7 +43,6 @@ export const Productos = ({ ref, agregarProducto }) => {
       style={{ marginTop: headerHeight }}
     >
       <div className="row">
-        {/* <h1 className="mb-4 text-center">Lista de Productos</h1> */}
         {/* Botones de categorías */}
         <div className="text-center mb-4">
           {categorias.map((categ) => (
@@ -51,22 +67,22 @@ export const Productos = ({ ref, agregarProducto }) => {
             >
               <div className="card h-100 card-hover">
                 <img
-                  src={producto.imagen}
+                  src={`http://localhost:8080${producto.image}`}
                   className="card-img-top img-producto"
-                  alt={producto.nombre}
+                  alt={producto.name}
                   style={{ objectFit: "cover", width: "100%", height: "200px" }}
                 />
                 <div className="card-body text-center">
                   <h5 className="fw-semibold">
-                    {producto.nombre}{" "}
-                    <span className="texto-gris">{producto.cantidad}</span>
+                    {producto.name}{" "}
+                    <span className="texto-gris">{producto.quantity}</span>
                   </h5>
                 </div>
                 <div className="text-start">
-                  <h4>${producto.precio.toLocaleString("es-CL")}</h4>
+                  <h4>${producto.price.toLocaleString("es-CL")}</h4>
                 </div>
                 <div className="text-start texto-gris">
-                  <h6>{producto.marca}</h6>
+                  <h6>{producto.brand}</h6>
                 </div>
                 <div className="text-center mt-2">
                   <button
